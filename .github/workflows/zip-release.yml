@@ -11,10 +11,13 @@ jobs:
       with:
         filename: 'latest.zip'
         exclusions: '*.git* LICENSE'
-    - name: Delete Latest Release
-      uses: ame-yu/action-delete-latest-release@v2
+    - name: Delete Existing Release
+      uses: dev-drprasad/delete-tag-and-release@v0.1.2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        delete_release: true # default: false
+        tag_name: latest # tag name to delete
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1

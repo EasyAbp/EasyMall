@@ -9,7 +9,7 @@ jobs:
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:
-        path: './template'
+        directory: './template'
         filename: 'latest.zip'
         exclusions: '*.git*'
     - name: Delete Existing Release

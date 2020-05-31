@@ -1,0 +1,12 @@
+name: Zip Release
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'latest.zip'
+        exclusions: '*.git* LICENSE'

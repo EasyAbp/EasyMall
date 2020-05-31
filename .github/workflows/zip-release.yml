@@ -9,7 +9,7 @@ jobs:
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:
-        path: './template/'
+        directory: './template'
         filename: 'latest.zip'
         exclusions: '*.git*'
     - name: Delete Existing Release
@@ -40,6 +40,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./latest.zip
+        asset_path: ./template/latest.zip
         asset_name: latest.zip
         asset_content_type: application/zip

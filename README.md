@@ -1,5 +1,8 @@
 # EasyMall
+
 Quickly build an e-commerce application based on [EasyAbp.EShop](https://github.com/EasyAbp/EShop).
+
+> At present, Easymall has not been officially released.
 
 ## Getting Started
 
@@ -15,3 +18,7 @@ Quickly build an e-commerce application based on [EasyAbp.EShop](https://github.
 ### Install EasyMall to Existing Solutions
 
 Please refer to the [README.md](https://github.com/EasyAbp/EShop/blob/dev/README.md#getting-start) in EasyAbp.EShop repository.
+
+## Documents
+
+Todo.

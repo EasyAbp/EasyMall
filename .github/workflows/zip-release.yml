@@ -12,10 +12,10 @@ jobs:
       with:
         path: ./EShopVersion
     - name: Replace EShop Version
-      uses: frabert/replace-string-action@v1.1
+      uses: shitiomatic/str-replace@master
       with:
-        string: '{{EShopVersion}}'
-        replace-with: ${{ steps.package.outputs.content }}
+        find: "{{EShopVersion}}"
+        replace: ${{ steps.package.outputs.content }}
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:

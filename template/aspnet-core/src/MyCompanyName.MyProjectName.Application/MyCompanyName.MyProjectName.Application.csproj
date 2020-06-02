@@ -18,7 +18,7 @@
     <ProjectReference Include="..\..\..\..\..\modules\permission-management\src\Volo.Abp.PermissionManagement.Application\Volo.Abp.PermissionManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\tenant-management\src\Volo.Abp.TenantManagement.Application\Volo.Abp.TenantManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Application\Volo.Abp.FeatureManagement.Application.csproj" />
-    <PackageReference Include="EasyAbp.EShop.Application" Version="0.1.20" />
+    <PackageReference Include="EasyAbp.EShop.Application" Version="{{EShopVersion}}" />
   </ItemGroup>
 
 </Project>

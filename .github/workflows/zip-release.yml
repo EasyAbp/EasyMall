@@ -6,6 +6,16 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+    - name: Read EShop Version
+      id: version
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./EShopVersion
+    - name: Replace EShop Version
+      uses: frabert/replace-string-action@v1.1
+      with:
+        string: '{{EShopVersion}}'
+        replace-with: ${{ steps.package.outputs.content }}
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:

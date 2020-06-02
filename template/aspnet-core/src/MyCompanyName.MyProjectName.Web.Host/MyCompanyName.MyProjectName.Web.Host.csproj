@@ -38,7 +38,7 @@
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Web\Volo.Abp.FeatureManagement.Web.csproj" />
     <ProjectReference Include="..\MyCompanyName.MyProjectName.HttpApi\MyCompanyName.MyProjectName.HttpApi.csproj" />
     <ProjectReference Include="..\MyCompanyName.MyProjectName.HttpApi.Client\MyCompanyName.MyProjectName.HttpApi.Client.csproj" />
-    <PackageReference Include="EasyAbp.EShop.Web" Version="0.1.20" />
+    <PackageReference Include="EasyAbp.EShop.Web" Version="{{EShopVersion}}" />
   </ItemGroup>
 
   <ItemGroup>

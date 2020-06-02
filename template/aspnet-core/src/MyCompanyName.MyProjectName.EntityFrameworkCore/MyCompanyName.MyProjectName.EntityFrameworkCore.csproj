@@ -18,7 +18,7 @@
     <ProjectReference Include="..\..\..\..\..\modules\audit-logging\src\Volo.Abp.AuditLogging.EntityFrameworkCore\Volo.Abp.AuditLogging.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\tenant-management\src\Volo.Abp.TenantManagement.EntityFrameworkCore\Volo.Abp.TenantManagement.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.EntityFrameworkCore\Volo.Abp.FeatureManagement.EntityFrameworkCore.csproj" />
-    <PackageReference Include="EasyAbp.EShop.EntityFrameworkCore" Version="0.1.20" />
+    <PackageReference Include="EasyAbp.EShop.EntityFrameworkCore" Version="{{EShopVersion}}" />
   </ItemGroup>
 
 </Project>

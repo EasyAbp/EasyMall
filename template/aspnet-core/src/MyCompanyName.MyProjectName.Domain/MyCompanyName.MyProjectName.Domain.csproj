@@ -21,7 +21,7 @@
     <ProjectReference Include="..\..\..\..\..\modules\tenant-management\src\Volo.Abp.TenantManagement.Domain\Volo.Abp.TenantManagement.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Domain\Volo.Abp.FeatureManagement.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\setting-management\src\Volo.Abp.SettingManagement.Domain\Volo.Abp.SettingManagement.Domain.csproj" />
-    <PackageReference Include="EasyAbp.EShop.Domain" Version="0.1.20" />
+    <PackageReference Include="EasyAbp.EShop.Domain" Version="{{EShopVersion}}" />
   </ItemGroup>
 
 </Project>

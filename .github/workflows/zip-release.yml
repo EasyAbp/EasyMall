@@ -7,15 +7,25 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
     - name: Read EShop Version
-      id: version
+      id: eshopversion
       uses: juliangruber/read-file-action@v1
       with:
         path: ./EShopVersion
+    - name: Read PaymentService Version
+      id: paymentserviceversion
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./PaymentServiceVersion
     - name: Replace EShop Version
       uses: shitiomatic/str-replace@master
       with:
         find: "{{EShopVersion}}"
-        replace: ${{ steps.version.outputs.content }}
+        replace: ${{ steps.eshopversion.outputs.content }}
+    - name: Replace PaymentService Version
+      uses: shitiomatic/str-replace@master
+      with:
+        find: "{{PaymentServiceVersion}}"
+        replace: ${{ steps.paymentserviceversion.outputs.content }}
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:

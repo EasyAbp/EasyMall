@@ -12,7 +12,7 @@ Quickly build an e-commerce application based on [EasyAbp.EShop](https://github.
   ```
   abp new MySolutionName -m none -ts https://github.com/EasyAbp/EasyMall/releases/download/latest/latest.zip
   ```
-  2. Apply migrations. [(see how)](https://docs.abp.io/en/abp/latest/Tutorials/Part-1?UI=MVC#apply-migrations)
+  2. Add new migration & update the database. [(see how)](https://docs.abp.io/en/abp/latest/Tutorials/Part-1?UI=MVC#add-new-migration-update-the-database)
   3. Run the application. [(see how)](https://docs.abp.io/en/abp/latest/Tutorials/Part-1?UI=MVC#run-the-application)
   
 ### Install EasyMall to Existing Solutions

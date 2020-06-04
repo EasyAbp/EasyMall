@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop.EntityFrameworkCore;
+using EasyAbp.PaymentService.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -45,6 +46,7 @@ namespace MyCompanyName.MyProjectName.EntityFrameworkCore
 
             builder.ConfigureMyProjectName();
             builder.ConfigureEShop();
+            builder.ConfigurePaymentService();
         }
     }
 }

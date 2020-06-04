@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop;
+using EasyAbp.PaymentService;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -16,6 +17,7 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementHttpApiClientModule),
         typeof(AbpTenantManagementHttpApiClientModule),
         typeof(AbpFeatureManagementHttpApiClientModule),
+        typeof(PaymentServiceHttpApiClientModule),
         typeof(EShopHttpApiClientModule)
     )]
     public class MyProjectNameHttpApiClientModule : AbpModule

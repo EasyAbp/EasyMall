@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop;
+using EasyAbp.PaymentService;
 using MyCompanyName.MyProjectName.MultiTenancy;
 using MyCompanyName.MyProjectName.ObjectExtending;
 using Volo.Abp.AuditLogging;
@@ -26,6 +27,7 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementDomainIdentityServerModule),
         typeof(AbpSettingManagementDomainModule),
         typeof(AbpTenantManagementDomainModule),
+        typeof(PaymentServiceDomainModule),
         typeof(EShopDomainModule)
         )]
     public class MyProjectNameDomainModule : AbpModule

@@ -7,6 +7,7 @@ using EasyAbp.EShop.Payments;
 using EasyAbp.EShop.Products;
 using EasyAbp.EShop.Stores;
 using EasyAbp.EShop.Web;
+using EasyAbp.PaymentService.Web;
 using Localization.Resources.AbpUi;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -57,6 +58,7 @@ namespace MyCompanyName.MyProjectName.Web
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule),
+        typeof(PaymentServiceWebModule),
         typeof(EShopWebModule)
         )]
     public class MyProjectNameWebModule : AbpModule
@@ -181,6 +183,7 @@ namespace MyCompanyName.MyProjectName.Web
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(MyProjectNameApplicationModule).Assembly);
+                options.ConventionalControllers.Create(typeof(PaymentServiceApplicationModule).Assembly);
                 options.ConventionalControllers.Create(typeof(EShopApplicationModule).Assembly);
                 options.ConventionalControllers.Create(typeof(EShopBasketsApplicationModule).Assembly);
                 options.ConventionalControllers.Create(typeof(EShopOrdersApplicationModule).Assembly);

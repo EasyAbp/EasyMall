@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop;
+using EasyAbp.PaymentService;
 using MyCompanyName.MyProjectName.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
@@ -24,6 +25,7 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementDomainSharedModule),
         typeof(AbpSettingManagementDomainSharedModule),
         typeof(AbpTenantManagementDomainSharedModule),
+        typeof(PaymentServiceDomainSharedModule),
         typeof(EShopDomainSharedModule)
         )]
     public class MyProjectNameDomainSharedModule : AbpModule

@@ -1,4 +1,5 @@
-﻿using EasyAbp.EShop;
+﻿using EasyAbp.PaymentService;
+using EasyAbp.EShop;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.BackgroundJobs.MongoDB;
@@ -22,6 +23,7 @@ namespace MyCompanyName.MyProjectName.MongoDB
         typeof(AbpAuditLoggingMongoDbModule),
         typeof(AbpTenantManagementMongoDbModule),
         typeof(AbpFeatureManagementMongoDbModule),
+        typeof(PaymentServiceMongoDbModule),
         typeof(EShopMongoDbModule)
         )]
     public class MyProjectNameMongoDbModule : AbpModule

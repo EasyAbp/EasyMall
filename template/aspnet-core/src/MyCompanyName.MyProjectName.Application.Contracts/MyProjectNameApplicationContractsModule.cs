@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop;
+using EasyAbp.PaymentService;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -17,6 +18,7 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementApplicationContractsModule),
         typeof(AbpTenantManagementApplicationContractsModule),
         typeof(AbpObjectExtendingModule),
+        typeof(PaymentServiceApplicationContractsModule),
         typeof(EShopApplicationContractsModule)
     )]
     public class MyProjectNameApplicationContractsModule : AbpModule

@@ -1,4 +1,5 @@
 ﻿using EasyAbp.EShop.EntityFrameworkCore;
+using EasyAbp.PaymentService.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace MyCompanyName.MyProjectName.EntityFrameworkCore
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpTenantManagementEntityFrameworkCoreModule),
         typeof(AbpFeatureManagementEntityFrameworkCoreModule),
+        typeof(PaymentServiceEntityFrameworkCoreModule),
         typeof(EShopEntityFrameworkCoreModule)
         )]
     public class MyProjectNameEntityFrameworkCoreModule : AbpModule

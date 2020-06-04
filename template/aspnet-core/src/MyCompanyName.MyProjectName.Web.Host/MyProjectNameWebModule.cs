@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using EasyAbp.EShop.Web;
+using EasyAbp.PaymentService.Web;
 using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
@@ -53,6 +54,7 @@ namespace MyCompanyName.MyProjectName.Web
         typeof(AbpIdentityWebModule),
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule),
+        typeof(PaymentServiceWebModule),
         typeof(EShopWebModule)
         )]
     public class MyProjectNameWebModule : AbpModule

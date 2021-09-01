@@ -44,8 +44,10 @@ namespace MyCompanyName.MyProjectName.Blazor.Server
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .AddAppSettingsSecretsJson()
+            Host.CreateDefaultBuilder(args).ConfigureAppConfiguration(build =>
+                {
+                    build.AddJsonFile("appsettings.secrets.json", optional: true);
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

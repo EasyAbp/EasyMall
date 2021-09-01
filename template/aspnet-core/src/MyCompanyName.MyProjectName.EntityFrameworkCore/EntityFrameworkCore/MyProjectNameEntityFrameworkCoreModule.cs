@@ -1,5 +1,3 @@
-﻿using EasyAbp.EShop.EntityFrameworkCore;
-using EasyAbp.PaymentService.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -12,6 +10,11 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using EasyAbp.EShop.EntityFrameworkCore;
+using EasyAbp.EShop.Plugins.Baskets.EntityFrameworkCore;
+using EasyAbp.EShop.Plugins.Coupons.EntityFrameworkCore;
+using EasyAbp.PaymentService.EntityFrameworkCore;
+using EasyAbp.PaymentService.Prepayment.EntityFrameworkCore;
 
 namespace MyCompanyName.MyProjectName.EntityFrameworkCore
 {
@@ -25,10 +28,13 @@ namespace MyCompanyName.MyProjectName.EntityFrameworkCore
         typeof(AbpBackgroundJobsEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpTenantManagementEntityFrameworkCoreModule),
-        typeof(AbpFeatureManagementEntityFrameworkCoreModule),
-        typeof(PaymentServiceEntityFrameworkCoreModule),
-        typeof(EShopEntityFrameworkCoreModule)
+        typeof(AbpFeatureManagementEntityFrameworkCoreModule)
         )]
+    [DependsOn(typeof(EShopEntityFrameworkCoreModule))]
+    [DependsOn(typeof(EShopPluginsBasketsEntityFrameworkCoreModule))]
+    [DependsOn(typeof(EShopPluginsCouponsEntityFrameworkCoreModule))]
+    [DependsOn(typeof(PaymentServiceEntityFrameworkCoreModule))]
+    [DependsOn(typeof(PaymentServicePrepaymentEntityFrameworkCoreModule))]
     public class MyProjectNameEntityFrameworkCoreModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

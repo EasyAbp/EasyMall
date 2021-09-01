@@ -5,6 +5,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>MyCompanyName.MyProjectName</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,13 +17,20 @@
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Domain.Shared\Volo.Abp.FeatureManagement.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\permission-management\src\Volo.Abp.PermissionManagement.Domain.Shared\Volo.Abp.PermissionManagement.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\setting-management\src\Volo.Abp.SettingManagement.Domain.Shared\Volo.Abp.SettingManagement.Domain.Shared.csproj" />
-    <PackageReference Include="EasyAbp.PaymentService.Domain.Shared" Version="{{PaymentServiceVersion}}" />
-    <PackageReference Include="EasyAbp.EShop.Domain.Shared" Version="{{EShopVersion}}" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\MyProjectName\*.json" />
     <Content Remove="Localization\MyProjectName\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyAbp.EShop.Domain.Shared" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Baskets.Domain.Shared" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Coupons.Domain.Shared" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Domain.Shared" Version="{{PaymentServiceVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Prepayment.Domain.Shared" Version="{{PaymentServiceVersion}}" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.*" />
   </ItemGroup>
 
 </Project>

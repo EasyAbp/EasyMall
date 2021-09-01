@@ -2,18 +2,25 @@
 
 Quickly build an e-commerce application based on [EasyAbp.EShop](https://github.com/EasyAbp/EShop).
 
-> At present, the EasyMall has not been officially released.
+> Please note that the EasyMall is not officially released.
 
 ## Getting Started
 
 ### Create a New EasyMall Solution
 
-  1. Run ABP CLI command: [(see how to install ABP CLI)](https://docs.abp.io/en/abp/latest/CLI#installation)
-  ```
-  abp new MySolutionName -m none -ts https://github.com/EasyAbp/EasyMall/releases/download/latest/latest.zip
-  ```
-  2. Add new migration & update the database. [(see how)](https://docs.abp.io/en/abp/latest/Tutorials/Part-1?UI=MVC#add-new-migration-update-the-database)
-  3. Run the application. [(see how)](https://docs.abp.io/en/abp/latest/Tutorials/Part-1?UI=MVC#run-the-application)
+Install the ABP CLI:
+
+````bash
+dotnet tool install -g Volo.Abp.Cli
+````
+
+Create a new application with ABP CLI command:
+
+````bash
+abp new MyAppName -m none -ts https://github.com/EasyAbp/EasyMall/releases/download/latest/latest.zip
+````
+
+Run the DbMigrator, and then run your application. [(see how)](https://docs.abp.io/en/abp/latest/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tiered=No)
   
 ### Install EasyMall to Existing Solutions
 

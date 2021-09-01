@@ -1,11 +1,18 @@
-﻿using EasyAbp.EShop;
-using EasyAbp.PaymentService;
+using Localization.Resources.AbpUi;
+using MyCompanyName.MyProjectName.Localization;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
+using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using EasyAbp.EShop;
+using EasyAbp.EShop.Plugins.Baskets;
+using EasyAbp.EShop.Plugins.Coupons;
+using EasyAbp.PaymentService;
+using EasyAbp.PaymentService.Prepayment;
 
 namespace MyCompanyName.MyProjectName
 {
@@ -16,11 +23,30 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementHttpApiModule),
         typeof(AbpTenantManagementHttpApiModule),
         typeof(AbpFeatureManagementHttpApiModule),
-        typeof(PaymentServiceHttpApiModule),
-        typeof(EShopHttpApiModule)
+        typeof(AbpSettingManagementHttpApiModule)
         )]
+    [DependsOn(typeof(EShopHttpApiModule))]
+    [DependsOn(typeof(EShopPluginsBasketsHttpApiModule))]
+    [DependsOn(typeof(EShopPluginsCouponsHttpApiModule))]
+    [DependsOn(typeof(PaymentServiceHttpApiModule))]
+    [DependsOn(typeof(PaymentServicePrepaymentHttpApiModule))]
     public class MyProjectNameHttpApiModule : AbpModule
     {
-        
+        public override void ConfigureServices(ServiceConfigurationContext context)
+        {
+            ConfigureLocalization();
+        }
+
+        private void ConfigureLocalization()
+        {
+            Configure<AbpLocalizationOptions>(options =>
+            {
+                options.Resources
+                    .Get<MyProjectNameResource>()
+                    .AddBaseTypes(
+                        typeof(AbpUiResource)
+                    );
+            });
+        }
     }
 }

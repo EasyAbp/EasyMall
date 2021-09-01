@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>MyCompanyName.MyProjectName</RootNamespace>
   </PropertyGroup>
 
@@ -18,8 +18,15 @@
     <ProjectReference Include="..\..\..\..\..\modules\permission-management\src\Volo.Abp.PermissionManagement.Application\Volo.Abp.PermissionManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\tenant-management\src\Volo.Abp.TenantManagement.Application\Volo.Abp.TenantManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Application\Volo.Abp.FeatureManagement.Application.csproj" />
-    <PackageReference Include="EasyAbp.PaymentService.Application" Version="{{PaymentServiceVersion}}" />
+    <ProjectReference Include="..\..\..\..\..\modules\setting-management\src\Volo.Abp.SettingManagement.Application\Volo.Abp.SettingManagement.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EasyAbp.EShop.Application" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Baskets.Application" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Coupons.Application" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Application" Version="{{PaymentServiceVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Prepayment.Application" Version="{{PaymentServiceVersion}}" />
   </ItemGroup>
 
 </Project>

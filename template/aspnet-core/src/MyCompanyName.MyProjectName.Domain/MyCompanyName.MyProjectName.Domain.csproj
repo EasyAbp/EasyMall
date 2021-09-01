@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>MyCompanyName.MyProjectName</RootNamespace>
   </PropertyGroup>
 
@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\framework\src\Volo.Abp.Emailing\Volo.Abp.Emailing.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\identity\src\Volo.Abp.Identity.Domain\Volo.Abp.Identity.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\identity\src\Volo.Abp.PermissionManagement.Domain.Identity\Volo.Abp.PermissionManagement.Domain.Identity.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\identityserver\src\Volo.Abp.IdentityServer.Domain\Volo.Abp.IdentityServer.Domain.csproj" />
@@ -21,8 +22,14 @@
     <ProjectReference Include="..\..\..\..\..\modules\tenant-management\src\Volo.Abp.TenantManagement.Domain\Volo.Abp.TenantManagement.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\feature-management\src\Volo.Abp.FeatureManagement.Domain\Volo.Abp.FeatureManagement.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\setting-management\src\Volo.Abp.SettingManagement.Domain\Volo.Abp.SettingManagement.Domain.csproj" />
-    <PackageReference Include="EasyAbp.PaymentService.Domain" Version="{{PaymentServiceVersion}}" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EasyAbp.EShop.Domain" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Baskets.Domain" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.EShop.Plugins.Coupons.Domain" Version="{{EShopVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Domain" Version="{{PaymentServiceVersion}}" />
+    <PackageReference Include="EasyAbp.PaymentService.Prepayment.Domain" Version="{{PaymentServiceVersion}}" />
   </ItemGroup>
 
 </Project>

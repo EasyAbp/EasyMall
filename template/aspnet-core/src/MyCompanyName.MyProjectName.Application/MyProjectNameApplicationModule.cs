@@ -1,12 +1,20 @@
-﻿using EasyAbp.EShop;
-using EasyAbp.PaymentService;
+using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using EasyAbp.EShop;
+using EasyAbp.EShop.Plugins.Baskets;
+using EasyAbp.EShop.Plugins.Coupons;
+using EasyAbp.PaymentService;
+using EasyAbp.PaymentService.Payments;
+using EasyAbp.PaymentService.Prepayment;
+using EasyAbp.PaymentService.Prepayment.PaymentService;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MyCompanyName.MyProjectName
 {
@@ -18,9 +26,13 @@ namespace MyCompanyName.MyProjectName
         typeof(AbpPermissionManagementApplicationModule),
         typeof(AbpTenantManagementApplicationModule),
         typeof(AbpFeatureManagementApplicationModule),
-        typeof(PaymentServiceApplicationModule),
-        typeof(EShopApplicationModule)
+        typeof(AbpSettingManagementApplicationModule)
         )]
+    [DependsOn(typeof(EShopApplicationModule))]
+    [DependsOn(typeof(EShopPluginsBasketsApplicationModule))]
+    [DependsOn(typeof(EShopPluginsCouponsApplicationModule))]
+    [DependsOn(typeof(PaymentServiceApplicationModule))]
+    [DependsOn(typeof(PaymentServicePrepaymentApplicationModule))]
     public class MyProjectNameApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -29,6 +41,14 @@ namespace MyCompanyName.MyProjectName
             {
                 options.AddMaps<MyProjectNameApplicationModule>();
             });
+        }
+        
+        public override void OnApplicationInitialization(ApplicationInitializationContext context)
+        {
+            var resolver = context.ServiceProvider.GetRequiredService<IPaymentServiceResolver>();
+
+            resolver.TryRegisterProvider(FreePaymentServiceProvider.PaymentMethod, typeof(FreePaymentServiceProvider));
+            resolver.TryRegisterProvider(PrepaymentPaymentServiceProvider.PaymentMethod, typeof(PrepaymentPaymentServiceProvider));
         }
     }
 }

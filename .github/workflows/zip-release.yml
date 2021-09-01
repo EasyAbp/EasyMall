@@ -17,15 +17,17 @@ jobs:
       with:
         path: ./PaymentServiceVersion
     - name: Replace EShop Version
-      uses: shitiomatic/str-replace@master
+      uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "{{EShopVersion}}"
         replace: ${{ steps.eshopversion.outputs.content }}
+        include: template/
     - name: Replace PaymentService Version
-      uses: shitiomatic/str-replace@master
+      uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "{{PaymentServiceVersion}}"
         replace: ${{ steps.paymentserviceversion.outputs.content }}
+        include: template/
     - name: Create Zip Asset
       uses: thedoctor0/zip-release@master
       with:

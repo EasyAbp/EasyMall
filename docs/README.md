@@ -17,7 +17,7 @@ dotnet tool install -g Volo.Abp.Cli
 Create a new application with ABP CLI command:
 
 ````bash
-abp new MyAppName -m none -ts https://github.com/EasyAbp/EasyMall/releases/download/latest/latest.zip
+abp new MyStore -ts https://github.com/EasyAbp/EasyMall/releases/download/latest/latest.zip
 ````
 
 Run the DbMigrator, and then run your application. [(see how)](https://docs.abp.io/en/abp/latest/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tiered=No)

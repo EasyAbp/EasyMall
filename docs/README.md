@@ -24,7 +24,7 @@ Run the DbMigrator, and then run your application. [(see how)](https://docs.abp.
   
 ### Install EasyMall to Existing Solutions
 
-Please refer to the [README.md](https://github.com/EasyAbp/EShop/blob/dev/README.md#installation) in EasyAbp.EShop repository.
+Please refer to the [README.md](https://github.com/EasyAbp/EShop/blob/dev/docs/README.md#installation) in EasyAbp.EShop repository.
 
 ## Documents
 
